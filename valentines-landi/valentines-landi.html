@@ -21,7 +21,7 @@
             padding: 20px;
             text-align: center;
         }
-        #yesButton, #noButton {
+        #ouiButton, #nonButton {
             font-size: 20px;
             border-radius: 12px;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -31,20 +31,20 @@
             cursor: pointer;
             margin: 10px;
         }
-        #yesButton {
+        #ouiButton {
             background-color: #4CAF50; /* Green */
             color: white;
         }
-        #noButton {
+        #nonButton {
             background-color: #f44336; /* Red */
             color: white;
         }
-        #noButton:disabled {
+        #nonButton:disabled {
             background-color: #ddd;
             color: #666;
             box-shadow: none;
         }
-        #yesButton:hover, #noButton:hover {
+        #ouiButton:hover, #nonButton:hover {
             box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         }
 
@@ -66,23 +66,23 @@
 </head>
 <body>
     <div id="content">
-        <h2 id="question">Would you date me?</h2>
-        <button id="yesButton">YES</button>
-        <button id="noButton">NO</button>
+        <h2 id="question">Tu veux être ma valentine (avec 1semaine de retard à cause de carnaval la con d'sa mère) ?</h2>
+        <button id="yesButton">OUI</button>
+        <button id="noButton">NON</button>
         <p id="message"></p>
     </div>
 
     <script>
         var noClickCount = 0;
-        document.getElementById('noButton').addEventListener('click', function() { //NOOOOO button
+        document.getElementById('nonButton').addEventListener('click', function() { //NOOOOO button
             noClickCount++;
             if (noClickCount == 1) {
-                document.getElementById('yesButton').style.fontSize = '30px';
+                document.getElementById('ouiButton').style.fontSize = '30px';
             } else if (noClickCount == 2) {
                 this.style.fontSize = '10px';
-                document.getElementById('yesButton').style.fontSize = '40px';
+                document.getElementById('ouiButton').style.fontSize = '40px';
             } else if (noClickCount == 3) {
-                document.getElementById('yesButton').style.fontSize = '90px';
+                document.getElementById('ouiButton').style.fontSize = '90px';
                 this.style.fontSize = '7px';
             } else if (noClickCount == 4) {
                 this.style.position = 'absolute';
@@ -98,20 +98,20 @@
                 this.style.position = 'absolute';
                 this.style.left = Math.random() * window.innerWidth + 'px';
                 this.style.top = Math.random() * window.innerHeight + 'px';
-                document.getElementById('message').innerText = 'Are you sure?';
+                document.getElementById('message').innerText = 'Tes sure Lana?';
                 document.getElementById('message').style.position = 'absolute';
                 document.getElementById('message').style.left = this.style.left;
                 document.getElementById('message').style.top = parseFloat(this.style.top) + 50 + 'px';
             } else if (noClickCount == 15) {
-                document.getElementById('message').innerText = 'Oh No! You broke the button :c';
+                document.getElementById('message').innerText = 'Oh Non! Tas cassé le bouton :c';
                 this.disabled = true;
                 this.style.color = grey;
-                document.getElementById('message').innerText = 'Oh No! You broke the button :c';
+                document.getElementById('message').innerText = 'Oh Non! tas cassé le bouton :c';
             }
         });
 
         document.getElementById('yesButton').addEventListener('click', function() {                 //YESSSS button
-            document.getElementById('question').innerText = 'YIEEEEE SAN DATE NATIN? OTW';
+            document.getElementById('question').innerText = 'YEAHHHHH rdv à paris jai hate ma summer peach';
             for (var i = 0; i < 100; i++) {
                 var heart = document.createElement('div');
                 heart.className = 'heart';
@@ -120,8 +120,8 @@
                 heart.style.animationDelay = Math.random() * 2 + 's'; // eto 0 and 2. di ko sure kung sure na
                 document.body.appendChild(heart);
             }
-            document.getElementById('yesButton').style.display = 'none';
-            document.getElementById('noButton').style.display = 'none';
+            document.getElementById('ouiButton').style.display = 'none';
+            document.getElementById('nonButton').style.display = 'none';
         });
     </script>
 </body>
